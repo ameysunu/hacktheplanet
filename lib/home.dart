@@ -67,7 +67,7 @@ class _HomeState extends State<Home> {
                       "$name",
                       style: TextStyle(
                           fontFamily: 'Gotham',
-                          color: Colors.pink,
+                          color: HexColor('#EC1C64'),
                           fontSize: 25),
                     ),
                   ),
@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              "What would you like?",
+              "What do you feel like having?",
               style: TextStyle(
                   fontFamily: 'Gotham', color: Colors.white, fontSize: 17),
             ),
