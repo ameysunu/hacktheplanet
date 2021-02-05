@@ -30,11 +30,9 @@ class _IntroductionPageState extends State<IntroductionPage> {
 
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(
-        fontSize: 18.0,
-        fontFamily: 'Gotham',
-        color: Color.fromRGBO(168, 97, 122, 1));
-    const pageDecoration = const PageDecoration(
+    var bodyStyle = TextStyle(
+        fontSize: 18.0, fontFamily: 'Gotham', color: HexColor('#412D61'));
+    var pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(
           fontSize: 26.0,
           fontWeight: FontWeight.w700,
@@ -42,25 +40,25 @@ class _IntroductionPageState extends State<IntroductionPage> {
           color: Colors.white),
       bodyTextStyle: bodyStyle,
       descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Color.fromRGBO(255, 132, 172, 1),
+      pageColor: HexColor('#845EC2'),
       imagePadding: EdgeInsets.zero,
     );
     return Scaffold(
-      backgroundColor: HexColor('#FF84AF'),
+      backgroundColor: HexColor('#845EC2'),
       body: SafeArea(
         child: IntroductionScreen(
           key: introKey,
           pages: [
             PageViewModel(
-              title: "Welcome to Alleviate",
-              body: "We are glad, you are here $name!",
-              image: _buildImage('login'),
+              title: "Welcome to Extricate",
+              body: "We are excited to see you here $name!",
+              image: _buildImage('welcome'),
               decoration: pageDecoration,
             ),
             PageViewModel(
-              title: "Write journals and blogs.",
-              body: "Shhh..These stay only with you.",
-              image: _buildImage('login'),
+              title: "Save excess food.",
+              body: "PS: These aren't leftovers. Just excess food.",
+              image: _buildImage('food'),
               decoration: pageDecoration,
             ),
             PageViewModel(
@@ -68,10 +66,10 @@ class _IntroductionPageState extends State<IntroductionPage> {
               bodyWidget: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("We are always here for you $name.", style: bodyStyle),
+                  Text("You are genius for helping, $name.", style: bodyStyle),
                 ],
               ),
-              image: _buildImage('login'),
+              image: _buildImage('happy'),
               decoration: pageDecoration,
             ),
           ],
@@ -83,7 +81,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
               style: TextStyle(fontFamily: 'Gotham', color: Colors.white)),
           next: Icon(
             Icons.arrow_forward,
-            color: HexColor('#A8617A'),
+            color: HexColor('#412D61'),
           ),
           done: const Text('Done',
               style: TextStyle(
