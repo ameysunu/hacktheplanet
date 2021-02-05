@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hacktheplanet/home.dart';
+import 'package:hacktheplanet/homewidget.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -24,7 +24,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
   void _onIntroEnd(context) {
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => Home()),
+      MaterialPageRoute(builder: (_) => HomeWidget()),
     );
   }
 
