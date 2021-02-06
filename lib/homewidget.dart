@@ -36,18 +36,18 @@ class _HomeWidgetState extends State<HomeWidget> {
               ),
             ),
             BottomNavigationBarItem(
-              icon:
-                  new Icon(Icons.multitrack_audio, color: HexColor('#5C6178')),
+              icon: new Icon(Icons.shopping_cart_outlined,
+                  color: HexColor('#5C6178')),
               title: new Text(
-                'Graph',
+                'Cart',
                 style:
                     TextStyle(color: HexColor('#5C6178'), fontFamily: 'Gotham'),
               ),
             ),
             BottomNavigationBarItem(
-              icon: new Icon(Icons.mood, color: HexColor('#5C6178')),
+              icon: new Icon(Icons.money_rounded, color: HexColor('#5C6178')),
               title: new Text(
-                'Mood',
+                'Donate',
                 style:
                     TextStyle(color: HexColor('#5C6178'), fontFamily: 'Gotham'),
               ),
