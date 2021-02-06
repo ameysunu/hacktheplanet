@@ -32,59 +32,189 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.pink,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: HexColor('#FFE3EA'),
-                image: DecorationImage(
-                  colorFilter: new ColorFilter.mode(
-                      Colors.black.withOpacity(0.2), BlendMode.dstATop),
-                  image: AssetImage('images/back.png'),
-                  fit: BoxFit.cover,
-                )),
-            height: MediaQuery.of(context).size.height * 0.25,
-            width: MediaQuery.of(context).size.width * 1,
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      greeting.toUpperCase() + " ,",
-                      style: TextStyle(
-                          fontFamily: 'Gotham',
-                          color: Colors.pink,
-                          fontSize: 20),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  color: HexColor('#FFE3EA'),
+                  image: DecorationImage(
+                    colorFilter: new ColorFilter.mode(
+                        Colors.black.withOpacity(0.2), BlendMode.dstATop),
+                    image: AssetImage('images/back.png'),
+                    fit: BoxFit.cover,
+                  )),
+              height: MediaQuery.of(context).size.height * 0.25,
+              width: MediaQuery.of(context).size.width * 1,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        greeting.toUpperCase() + " ,",
+                        style: TextStyle(
+                            fontFamily: 'Gotham',
+                            color: Colors.pink,
+                            fontSize: 20),
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      "$name",
-                      style: TextStyle(
-                          fontFamily: 'Gotham',
-                          color: HexColor('#EC1C64'),
-                          fontSize: 25),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        "$name",
+                        style: TextStyle(
+                            fontFamily: 'Gotham',
+                            color: HexColor('#EC1C64'),
+                            fontSize: 25),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text(
-              "What do you feel like having?",
-              style: TextStyle(
-                  fontFamily: 'Gotham', color: Colors.white, fontSize: 17),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.05,
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                "What do you feel like having?".toUpperCase(),
+                style: TextStyle(
+                    fontFamily: 'Gotham', color: Colors.white, fontSize: 17),
+              ),
+            ),
+            Container(
+                child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 1,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: HexColor('#FFE8ED'),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(
+                        "Vegetables and Fruits",
+                        style: TextStyle(
+                            fontFamily: 'Gotham',
+                            color: HexColor('#E5808E'),
+                            fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 1,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: HexColor('#FFE8ED'),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(
+                        "Grain and Bread",
+                        style: TextStyle(
+                            fontFamily: 'Gotham',
+                            color: HexColor('#E5808E'),
+                            fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 1,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: HexColor('#FFE8ED'),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(
+                        "Milk Products",
+                        style: TextStyle(
+                            fontFamily: 'Gotham',
+                            color: HexColor('#E5808E'),
+                            fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 1,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: HexColor('#FFE8ED'),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(
+                        "Non Vegetarian",
+                        style: TextStyle(
+                            fontFamily: 'Gotham',
+                            color: HexColor('#E5808E'),
+                            fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 1,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: HexColor('#FFE8ED'),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(
+                        "Fast Food",
+                        style: TextStyle(
+                            fontFamily: 'Gotham',
+                            color: HexColor('#E5808E'),
+                            fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 1,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: HexColor('#FFE8ED'),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(
+                        "Vegan Options",
+                        style: TextStyle(
+                            fontFamily: 'Gotham',
+                            color: HexColor('#E5808E'),
+                            fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            )),
+          ],
+        ),
       ),
     );
   }
