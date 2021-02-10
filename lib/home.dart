@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacktheplanet/items.dart';
 import 'package:hacktheplanet/login.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
@@ -93,22 +94,33 @@ class _HomeState extends State<Home> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 1,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: HexColor('#FFE8ED'),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text(
-                        "Vegetables and Fruits",
-                        style: TextStyle(
-                            fontFamily: 'Gotham',
-                            color: HexColor('#E5808E'),
-                            fontSize: 20),
+                  child: InkWell(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 1,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: HexColor('#FFE8ED'),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          "Vegetables and Fruits",
+                          style: TextStyle(
+                              fontFamily: 'Gotham',
+                              color: HexColor('#E5808E'),
+                              fontSize: 20),
+                        ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Items();
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Padding(
