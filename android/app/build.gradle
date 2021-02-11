@@ -25,6 +25,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'newrelic'
 
 android {
     compileSdkVersion 30
@@ -56,8 +57,10 @@ flutter {
     source '../..'
 }
 
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation platform('com.google.firebase:firebase-bom:26.4.0')
     implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.newrelic.agent.android:android-agent:5.24.3'
 }

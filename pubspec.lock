@@ -262,6 +262,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.0-nullsafety.6"
+  new_relic_plugin:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "2489c3bc6b82f7a4743022ff4646bd077dce5b65"
+      url: "git://github.com/OswaldoGallo/NewRelicPlugin.git"
+    source: git
+    version: "0.0.1"
   path:
     dependency: transitive
     description:

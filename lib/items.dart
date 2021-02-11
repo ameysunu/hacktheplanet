@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hacktheplanet/test.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'home.dart' as home;
 
@@ -49,7 +50,18 @@ class _ItemsState extends State<Items> {
               icon: Icon(Icons.shopping_bag),
               onPressed: () {
                 print("Cart pressed");
-              })
+              }),
+          IconButton(
+              icon: Icon(Icons.text_snippet),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Test();
+                    },
+                  ),
+                );
+              }),
         ],
       ),
       body: Container(
