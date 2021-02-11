@@ -23,12 +23,22 @@ String greetings() {
   return 'Good Evening';
 }
 
+final firestoreInstance = FirebaseFirestore.instance;
+AsyncSnapshot<DocumentSnapshot> snapshot;
+Stream<QuerySnapshot> vegStream;
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    super.initState();
+    vegStream = firestoreInstance.collection('veggies').snapshots();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
