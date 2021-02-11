@@ -19,6 +19,16 @@ class _ItemsState extends State<Items> {
     super.initState();
     if (widget.head == "Vegetable and Fruits") {
       home.vegStream = firestoreInstance.collection('veggies').snapshots();
+    } else if (widget.head == "Grain and Bread") {
+      home.vegStream = firestoreInstance.collection('grains').snapshots();
+    } else if (widget.head == "Milk Products") {
+      home.vegStream = firestoreInstance.collection('milk').snapshots();
+    } else if (widget.head == "Non Vegetarian") {
+      home.vegStream = firestoreInstance.collection('nonveg').snapshots();
+    } else if (widget.head == "Fast Food") {
+      home.vegStream = firestoreInstance.collection('fast').snapshots();
+    } else if (widget.head == "Vegan Options") {
+      home.vegStream = firestoreInstance.collection('vegan').snapshots();
     }
   }
 
@@ -42,44 +52,6 @@ class _ItemsState extends State<Items> {
               })
         ],
       ),
-      // body: Column(
-      //   children: [
-      //     Container(
-      //       height: MediaQuery.of(context).size.height * 0.05,
-      //     ),
-      //     Padding(
-      //       padding: const EdgeInsets.all(10.0),
-      //       child: Container(
-      //         decoration: BoxDecoration(
-      //             borderRadius: BorderRadius.circular(15),
-      //             color: HexColor('#EC1C64')),
-      //         child: Row(
-      //           children: [
-      //             Padding(
-      //               padding: const EdgeInsets.all(10.0),
-      //               child: Container(
-      //                   height: MediaQuery.of(context).size.height * 0.1,
-      //                   child: Image.asset('images/food.png')),
-      //             ),
-      //             Padding(
-      //               padding: const EdgeInsets.all(10.0),
-      //               child: Container(
-      //                   height: MediaQuery.of(context).size.height * 0.1,
-      //                   child: Text(
-      //                     "Fresh Tomatoes\n\nUSD 5.0\n\nEvergreen Marketplace",
-      //                     style: TextStyle(
-      //                       fontFamily: 'Gotham',
-      //                       color: HexColor('#FFE3EA'),
-      //                       fontSize: 16,
-      //                     ),
-      //                   )),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
       body: Container(
         child: Container(
           child: StreamBuilder(
