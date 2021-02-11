@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Items extends StatefulWidget {
+  final String title, head, price, place;
+  const Items({Key key, this.title, this.head, this.price, this.place})
+      : super(key: key);
   @override
   _ItemsState createState() => _ItemsState();
 }
@@ -16,7 +19,7 @@ class _ItemsState extends State<Items> {
         backgroundColor: HexColor('#FFE3EA'),
         elevation: 0,
         title: Text(
-          "Vegetable and Fruits",
+          widget.head,
           style: TextStyle(fontFamily: 'Gotham', color: HexColor('#EC1C64')),
         ),
         actions: [

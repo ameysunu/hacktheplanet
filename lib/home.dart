@@ -116,7 +116,9 @@ class _HomeState extends State<Home> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return Items();
+                            return Items(
+                              head: "Vegetable and Fruits",
+                            );
                           },
                         ),
                       );
@@ -125,102 +127,167 @@ class _HomeState extends State<Home> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 1,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: HexColor('#FFE8ED'),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text(
-                        "Grain and Bread",
-                        style: TextStyle(
-                            fontFamily: 'Gotham',
-                            color: HexColor('#E5808E'),
-                            fontSize: 20),
+                  child: InkWell(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 1,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: HexColor('#FFE8ED'),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          "Grain and Bread",
+                          style: TextStyle(
+                              fontFamily: 'Gotham',
+                              color: HexColor('#E5808E'),
+                              fontSize: 20),
+                        ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Items(
+                              head: "Grain and Bread",
+                            );
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 1,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: HexColor('#FFE8ED'),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text(
-                        "Milk Products",
-                        style: TextStyle(
-                            fontFamily: 'Gotham',
-                            color: HexColor('#E5808E'),
-                            fontSize: 20),
+                  child: InkWell(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 1,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: HexColor('#FFE8ED'),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          "Milk Products",
+                          style: TextStyle(
+                              fontFamily: 'Gotham',
+                              color: HexColor('#E5808E'),
+                              fontSize: 20),
+                        ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Items(
+                              head: "Milk Products",
+                            );
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 1,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: HexColor('#FFE8ED'),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text(
-                        "Non Vegetarian",
-                        style: TextStyle(
-                            fontFamily: 'Gotham',
-                            color: HexColor('#E5808E'),
-                            fontSize: 20),
+                  child: InkWell(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 1,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: HexColor('#FFE8ED'),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          "Non Vegetarian",
+                          style: TextStyle(
+                              fontFamily: 'Gotham',
+                              color: HexColor('#E5808E'),
+                              fontSize: 20),
+                        ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Items(
+                              head: "Non Vegetarian",
+                            );
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 1,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: HexColor('#FFE8ED'),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text(
-                        "Fast Food",
-                        style: TextStyle(
-                            fontFamily: 'Gotham',
-                            color: HexColor('#E5808E'),
-                            fontSize: 20),
+                  child: InkWell(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 1,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: HexColor('#FFE8ED'),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          "Fast Food",
+                          style: TextStyle(
+                              fontFamily: 'Gotham',
+                              color: HexColor('#E5808E'),
+                              fontSize: 20),
+                        ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Items(
+                              head: "Fast Food",
+                            );
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 1,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: HexColor('#FFE8ED'),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text(
-                        "Vegan Options",
-                        style: TextStyle(
-                            fontFamily: 'Gotham',
-                            color: HexColor('#E5808E'),
-                            fontSize: 20),
+                  child: InkWell(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 1,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: HexColor('#FFE8ED'),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          "Vegan Options",
+                          style: TextStyle(
+                              fontFamily: 'Gotham',
+                              color: HexColor('#E5808E'),
+                              fontSize: 20),
+                        ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Items(
+                              head: "Vegan Options",
+                            );
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
