@@ -81,7 +81,11 @@ class _ItemsState extends State<Items> {
                                         height:
                                             MediaQuery.of(context).size.height *
                                                 0.1,
-                                        child: Image.asset('images/food.png')),
+                                        width:
+                                            MediaQuery.of(context).size.height *
+                                                0.15,
+                                        child: Image.network(
+                                            groupUsers[index].data()['image'])),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
@@ -120,17 +124,3 @@ class _ItemsState extends State<Items> {
     );
   }
 }
-
-/*
- if (halfyear.groupvalue == 'CS') {
-      halfyear.newStream = FirebaseFirestore.instance
-          .collection('students')
-          .where('group', isEqualTo: "CS")
-          .snapshots();
-    } else if (halfyear.groupvalue == 'JS') {
-      halfyear.newStream = FirebaseFirestore.instance
-          .collection('students')
-          .where('group', isEqualTo: "JS")
-          .snapshots();
-    } 
-*/
