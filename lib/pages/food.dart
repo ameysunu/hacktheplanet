@@ -129,5 +129,3 @@ class _FoodState extends State<Food> {
     );
   }
 }
-
-void newRecord() async {}
