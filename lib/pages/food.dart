@@ -13,11 +13,11 @@ class _FoodState extends State<Food> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HexColor('#CD96EB'),
+      backgroundColor: HexColor('#EC1C64'),
       appBar: AppBar(
-        backgroundColor: HexColor('#CD96EB'),
+        backgroundColor: HexColor('#EC1C64'),
         elevation: 0,
-        iconTheme: IconThemeData(color: HexColor('#41135E')),
+        iconTheme: IconThemeData(color: HexColor('#FFE3EA')),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +29,7 @@ class _FoodState extends State<Food> {
               style: TextStyle(
                   fontFamily: 'Gotham',
                   fontSize: 20,
-                  color: HexColor('#41135E')),
+                  color: HexColor('#FFE3EA')),
             ),
           ),
           Padding(
@@ -39,7 +39,7 @@ class _FoodState extends State<Food> {
               style: TextStyle(
                   fontFamily: 'Gotham',
                   fontSize: 17,
-                  color: HexColor('#FFFFFF')),
+                  color: HexColor('#41135E')),
             ),
           ),
           Center(
@@ -58,7 +58,7 @@ class _FoodState extends State<Food> {
                   topLeft: Radius.circular(15),
                   topRight: Radius.circular(15),
                 ),
-                color: Colors.white),
+                color: HexColor('#FFE3EA')),
             width: MediaQuery.of(context).size.width * 1,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,12 +82,12 @@ class _FoodState extends State<Food> {
                       child: RaisedButton(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(color: HexColor('#CD96EB'))),
+                            side: BorderSide(color: HexColor('#EC1C64'))),
                         onPressed: () {
                           null;
                         },
-                        color: HexColor('#CD96EB'),
-                        textColor: HexColor('#FFFFFF'),
+                        color: HexColor('#EC1C64'),
+                        textColor: HexColor('#FFE3EA'),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
