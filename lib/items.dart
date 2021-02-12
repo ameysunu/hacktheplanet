@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:hacktheplanet/test.dart';
+import 'package:hacktheplanet/pages/food.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'home.dart' as home;
 
@@ -51,17 +51,17 @@ class _ItemsState extends State<Items> {
               onPressed: () {
                 print("Cart pressed");
               }),
-          IconButton(
-              icon: Icon(Icons.text_snippet),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return Test();
-                    },
-                  ),
-                );
-              }),
+          // IconButton(
+          //     icon: Icon(Icons.text_snippet),
+          //     onPressed: () {
+          //       Navigator.of(context).push(
+          //         MaterialPageRoute(
+          //           builder: (context) {
+          //             return Test();
+          //           },
+          //         ),
+          //       );
+          //     }),
         ],
       ),
       body: Container(
@@ -81,46 +81,70 @@ class _ItemsState extends State<Items> {
                         return SingleChildScrollView(
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  color: HexColor('#EC1C64')),
-                              child: Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.1,
-                                        width:
-                                            MediaQuery.of(context).size.height *
-                                                0.15,
-                                        child: Image.network(
-                                            groupUsers[index].data()['image'])),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.1,
-                                        child: Text(
-                                          groupUsers[index].data()['title'] +
-                                              "\n\n" +
-                                              groupUsers[index]
-                                                  .data()['price'] +
-                                              "\n\n" +
-                                              groupUsers[index].data()['place'],
-                                          style: TextStyle(
-                                            fontFamily: 'Gotham',
-                                            color: HexColor('#FFE3EA'),
-                                            fontSize: 16,
-                                          ),
-                                        )),
-                                  ),
-                                ],
+                            child: InkWell(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                    color: HexColor('#EC1C64')),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Container(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.1,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.15,
+                                          child: Image.network(groupUsers[index]
+                                              .data()['image'])),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Container(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.1,
+                                          child: Text(
+                                            groupUsers[index].data()['title'] +
+                                                "\n\n" +
+                                                groupUsers[index]
+                                                    .data()['price'] +
+                                                "\n\n" +
+                                                groupUsers[index]
+                                                    .data()['place'],
+                                            style: TextStyle(
+                                              fontFamily: 'Gotham',
+                                              color: HexColor('#FFE3EA'),
+                                              fontSize: 16,
+                                            ),
+                                          )),
+                                    ),
+                                  ],
+                                ),
                               ),
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return Food(
+                                        title:
+                                            groupUsers[index].data()['title'],
+                                        price:
+                                            groupUsers[index].data()['price'],
+                                        place:
+                                            groupUsers[index].data()['place'],
+                                        image:
+                                            groupUsers[index].data()['image'],
+                                      );
+                                    },
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         );
