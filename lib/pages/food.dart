@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:intl/intl.dart';
+
+import '../items.dart';
+
+DateTime now = DateTime.now();
+String newDate = DateFormat('EEE d MMM, kk:mm').format(now);
 
 class Food extends StatefulWidget {
   final String title, price, place, image;
@@ -83,8 +89,20 @@ class _FoodState extends State<Food> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                             side: BorderSide(color: HexColor('#EC1C64'))),
-                        onPressed: () {
-                          null;
+                        onPressed: () async {
+                          firestoreInstance
+                              .collection('cart')
+                              .doc('${now.day}${now.month}${now.year}')
+                              .set({
+                            "title": widget.title,
+                            "price": widget.price,
+                            "id": '${now.day}${now.month}${now.year}',
+                            "image": widget.image,
+                          }).then((_) {
+                            print("success!");
+                          });
+
+                          Navigator.pop(context);
                         },
                         color: HexColor('#EC1C64'),
                         textColor: HexColor('#FFE3EA'),
@@ -111,3 +129,5 @@ class _FoodState extends State<Food> {
     );
   }
 }
+
+void newRecord() async {}
