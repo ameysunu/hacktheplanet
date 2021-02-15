@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacktheplanet/pages/maps.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
 
@@ -102,7 +103,12 @@ class _FoodState extends State<Food> {
                             print("success!");
                           });
 
-                          Navigator.pop(context);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Maps(
+                                        place: widget.place,
+                                      )));
                         },
                         color: HexColor('#EC1C64'),
                         textColor: HexColor('#FFE3EA'),
