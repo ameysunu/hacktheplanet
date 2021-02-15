@@ -48,7 +48,7 @@ class _ItemsState extends State<Items> {
         ),
         actions: [
           IconButton(
-              icon: Icon(Icons.shopping_bag),
+              icon: Icon(Icons.local_convenience_store),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(

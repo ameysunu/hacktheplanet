@@ -27,7 +27,7 @@ class _CartState extends State<Cart> {
         backgroundColor: HexColor('#FFE3EA'),
         iconTheme: IconThemeData(color: HexColor('#EC1C64')),
         title: Text(
-          "Cart".toUpperCase(),
+          "Previous Interests".toUpperCase(),
           style: TextStyle(fontFamily: 'Gotham', color: HexColor('#EC1C64')),
         ),
       ),
@@ -118,3 +118,5 @@ class _CartState extends State<Cart> {
     );
   }
 }
+
+// Change to directions

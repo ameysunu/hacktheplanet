@@ -110,7 +110,7 @@ class _FoodState extends State<Food> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Center(
-                              child: Text("Add to Cart".toUpperCase(),
+                              child: Text("Get Directions".toUpperCase(),
                                   style: TextStyle(
                                       fontFamily: 'Gotham',
                                       color: HexColor('#41135E'))),
