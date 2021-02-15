@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hacktheplanet/pages/cart.dart';
 import 'package:hacktheplanet/pages/food.dart';
@@ -53,7 +54,7 @@ class _ItemsState extends State<Items> {
         ),
         actions: [
           IconButton(
-              icon: Icon(Icons.local_convenience_store),
+              icon: Icon(CupertinoIcons.burst_fill),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(

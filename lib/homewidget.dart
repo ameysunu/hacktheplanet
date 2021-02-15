@@ -20,15 +20,15 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: HexColor('#E8DFF1'),
+          backgroundColor: HexColor('#FFE3EA'),
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           items: [
             BottomNavigationBarItem(
-              icon:
-                  new Icon(Icons.dashboard_rounded, color: HexColor('#5C6178')),
+              icon: new Icon(CupertinoIcons.chart_bar_square,
+                  color: HexColor('#EC1C64')),
               title: new Text(
                 'Home',
                 style:
@@ -36,8 +36,8 @@ class _HomeWidgetState extends State<HomeWidget> {
               ),
             ),
             BottomNavigationBarItem(
-              icon: new Icon(Icons.shopping_cart_outlined,
-                  color: HexColor('#5C6178')),
+              icon: new Icon(CupertinoIcons.shopping_cart,
+                  color: HexColor('#EC1C64')),
               title: new Text(
                 'Cart',
                 style:
@@ -45,7 +45,8 @@ class _HomeWidgetState extends State<HomeWidget> {
               ),
             ),
             BottomNavigationBarItem(
-              icon: new Icon(Icons.money_rounded, color: HexColor('#5C6178')),
+              icon: new Icon(CupertinoIcons.money_dollar,
+                  color: HexColor('#EC1C64')),
               title: new Text(
                 'Donate',
                 style:
@@ -53,11 +54,11 @@ class _HomeWidgetState extends State<HomeWidget> {
               ),
             ),
             BottomNavigationBarItem(
-              icon: new Icon(Icons.person, color: HexColor('#5C6178')),
+              icon: new Icon(CupertinoIcons.person, color: HexColor('#EC1C64')),
               title: new Text(
                 'User',
                 style:
-                    TextStyle(color: HexColor('#5C6178'), fontFamily: 'Gotham'),
+                    TextStyle(color: HexColor('#EC1C64'), fontFamily: 'Gotham'),
               ),
             ),
           ],
