@@ -10,8 +10,13 @@ String newDate = DateFormat('EEE d MMM, kk:mm').format(now);
 
 class Food extends StatefulWidget {
   final String title, price, place, image;
-  const Food({Key key, this.title, this.price, this.place, this.image})
-      : super(key: key);
+  const Food({
+    Key key,
+    this.title,
+    this.price,
+    this.place,
+    this.image,
+  }) : super(key: key);
   @override
   _FoodState createState() => _FoodState();
 }
@@ -108,6 +113,7 @@ class _FoodState extends State<Food> {
                               MaterialPageRoute(
                                   builder: (context) => Maps(
                                         place: widget.place,
+                                        title: widget.title,
                                       )));
                         },
                         color: HexColor('#EC1C64'),

@@ -32,6 +32,7 @@ dependencies:
   new_relic_plugin:
     git:
       url: git://github.com/OswaldoGallo/NewRelicPlugin.git
+  google_maps_flutter: ^0.5.32
 
 
   # The following adds the Cupertino Icons font to your application.

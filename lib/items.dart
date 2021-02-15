@@ -9,8 +9,13 @@ final firestoreInstance = FirebaseFirestore.instance;
 
 class Items extends StatefulWidget {
   final String title, head, price, place;
-  const Items({Key key, this.title, this.head, this.price, this.place})
-      : super(key: key);
+  const Items({
+    Key key,
+    this.title,
+    this.head,
+    this.price,
+    this.place,
+  }) : super(key: key);
   @override
   _ItemsState createState() => _ItemsState();
 }
