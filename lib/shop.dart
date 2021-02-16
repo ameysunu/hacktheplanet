@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hacktheplanet/pages/accessories.dart';
+import 'package:hacktheplanet/pages/grocery.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Shop extends StatefulWidget {
@@ -19,21 +22,37 @@ class _ShopState extends State<Shop> {
             elevation: 0,
             bottom: TabBar(tabs: [
               Tab(
-                icon: Text(
-                  "Grocery".toUpperCase(),
-                  style: TextStyle(
-                      fontFamily: 'Gotham', color: HexColor('#EC1C64')),
+                icon: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Icon(CupertinoIcons.bag_fill, color: HexColor('#EC1C64')),
+                    Text(
+                      "Grocery".toUpperCase(),
+                      style: TextStyle(
+                          fontFamily: 'Gotham', color: HexColor('#EC1C64')),
+                    ),
+                  ],
                 ),
               ),
               Tab(
-                icon: Text(
-                  "Accessories".toUpperCase(),
-                  style: TextStyle(
-                      fontFamily: 'Gotham'.toUpperCase(),
-                      color: HexColor('#EC1C64')),
+                icon: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Icon(CupertinoIcons.paintbrush_fill,
+                        color: HexColor('#EC1C64')),
+                    Text(
+                      "Accessories".toUpperCase(),
+                      style: TextStyle(
+                          fontFamily: 'Gotham'.toUpperCase(),
+                          color: HexColor('#EC1C64')),
+                    ),
+                  ],
                 ),
               ),
             ])),
+        body: TabBarView(
+          children: [Grocery(), Accessories()],
+        ),
       ),
     );
   }
