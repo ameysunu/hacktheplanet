@@ -44,9 +44,12 @@ class _GroceryState extends State<Grocery> {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
+                                  colorFilter: new ColorFilter.mode(
+                                      Colors.black.withOpacity(0.8),
+                                      BlendMode.dstATop),
                                   image: NetworkImage(
                                       groupUsers[index].data()['image'])),
-                              color: HexColor('#EC1C64'),
+                              color: HexColor('#000000'),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15))),
                           child: Column(

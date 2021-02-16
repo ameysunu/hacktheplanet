@@ -41,11 +41,14 @@ class _AccessoriesState extends State<Accessories> {
                         padding: const EdgeInsets.all(10.0),
                         child: Container(
                           decoration: BoxDecoration(
-                              // image: DecorationImage(
-                              //     fit: BoxFit.cover,
-                              //     image: NetworkImage(
-                              //         groupUsers[index].data()['image'])),
-                              color: HexColor('#EC1C64'),
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  colorFilter: new ColorFilter.mode(
+                                      Colors.black.withOpacity(0.8),
+                                      BlendMode.dstATop),
+                                  image: NetworkImage(
+                                      groupUsers[index].data()['image'])),
+                              color: HexColor('#000000'),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15))),
                           child: Column(
