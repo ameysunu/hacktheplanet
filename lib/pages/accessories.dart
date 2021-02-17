@@ -52,6 +52,8 @@ class _AccessoriesState extends State<Accessories> {
                                               groupUsers[index].data()['name'],
                                           price:
                                               groupUsers[index].data()['price'],
+                                          description: groupUsers[index]
+                                              .data()['description'],
                                         )));
                           },
                           child: Container(

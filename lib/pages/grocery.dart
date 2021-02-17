@@ -47,13 +47,13 @@ class _GroceryState extends State<Grocery> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => ShopList(
-                                          image:
-                                              groupUsers[index].data()['image'],
-                                          name:
-                                              groupUsers[index].data()['name'],
-                                          price:
-                                              groupUsers[index].data()['price'],
-                                        )));
+                                        image:
+                                            groupUsers[index].data()['image'],
+                                        name: groupUsers[index].data()['name'],
+                                        price:
+                                            groupUsers[index].data()['price'],
+                                        description: groupUsers[index]
+                                            .data()['description'])));
                           },
                           child: Container(
                             decoration: BoxDecoration(

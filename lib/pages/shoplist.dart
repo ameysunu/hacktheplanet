@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class ShopList extends StatefulWidget {
-  final String name, price, place, image;
-  ShopList({Key key, this.name, this.price, this.place, this.image})
+  final String name, price, description, image;
+  ShopList({Key key, this.name, this.price, this.description, this.image})
       : super(key: key);
   @override
   _ShopListState createState() => _ShopListState();
@@ -83,7 +83,7 @@ class _ShopListState extends State<ShopList> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      "Description",
+                      widget.description,
                       style: TextStyle(
                           fontFamily: 'Gotham',
                           fontSize: 18,
