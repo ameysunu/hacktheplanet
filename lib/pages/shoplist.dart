@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hacktheplanet/pages/maps.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class ShopList extends StatefulWidget {
@@ -106,7 +107,13 @@ class _ShopListState extends State<ShopList> {
                           borderRadius: BorderRadius.circular(10.0),
                           side: BorderSide(color: HexColor('#EC1C64'))),
                       onPressed: () async {
-                        null;
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Maps(
+                                      title: widget.name,
+                                      place: widget.description,
+                                    )));
                       },
                       color: HexColor('#EC1C64'),
                       textColor: HexColor('#FFE3EA'),
