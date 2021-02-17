@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:hacktheplanet/pages/shoplist.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter/material.dart';
 
@@ -40,44 +41,59 @@ class _GroceryState extends State<Grocery> {
                       // return Text(groupUsers[index].data()['title']);
                       return Padding(
                         padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  colorFilter: new ColorFilter.mode(
-                                      Colors.black.withOpacity(0.8),
-                                      BlendMode.dstATop),
-                                  image: NetworkImage(
-                                      groupUsers[index].data()['image'])),
-                              color: HexColor('#000000'),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15))),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Spacer(),
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Text(
-                                  groupUsers[index].data()['name'],
-                                  style: TextStyle(
-                                      fontFamily: 'Gotham',
-                                      fontSize: 17,
-                                      color: HexColor('#FFE3EA')),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ShopList(
+                                          image:
+                                              groupUsers[index].data()['image'],
+                                          name:
+                                              groupUsers[index].data()['name'],
+                                          price:
+                                              groupUsers[index].data()['price'],
+                                        )));
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    colorFilter: new ColorFilter.mode(
+                                        Colors.black.withOpacity(0.8),
+                                        BlendMode.dstATop),
+                                    image: NetworkImage(
+                                        groupUsers[index].data()['image'])),
+                                color: HexColor('#000000'),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15))),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Spacer(),
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    groupUsers[index].data()['name'],
+                                    style: TextStyle(
+                                        fontFamily: 'Gotham',
+                                        fontSize: 17,
+                                        color: HexColor('#FFE3EA')),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                child: Text(
-                                  groupUsers[index].data()['price'],
-                                  style: TextStyle(
-                                      fontFamily: 'Gotham',
-                                      fontSize: 17,
-                                      color: HexColor('#FFE3EA')),
-                                ),
-                              )
-                            ],
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10, 0, 10, 10),
+                                  child: Text(
+                                    groupUsers[index].data()['price'],
+                                    style: TextStyle(
+                                        fontFamily: 'Gotham',
+                                        fontSize: 17,
+                                        color: HexColor('#FFE3EA')),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       );
