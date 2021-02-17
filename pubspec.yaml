@@ -29,9 +29,6 @@ dependencies:
   google_sign_in: ^4.5.3
   introduction_screen: ^1.0.7 
   cloud_firestore:
-  new_relic_plugin:
-    git:
-      url: git://github.com/OswaldoGallo/NewRelicPlugin.git
   google_maps_flutter: ^0.5.32
 
 
