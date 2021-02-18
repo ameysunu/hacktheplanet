@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacktheplanet/pages/donation.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Donate extends StatefulWidget {
@@ -42,7 +43,14 @@ class _DonateState extends State<Donate> {
                   Column(
                     children: [
                       RawMaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Donation(
+                                        title: "Food",
+                                      )));
+                        },
                         fillColor: HexColor('#C33589'),
                         child: Icon(
                           Icons.food_bank,
@@ -68,7 +76,14 @@ class _DonateState extends State<Donate> {
                   Column(
                     children: [
                       RawMaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Donation(
+                                        title: "Grocery",
+                                      )));
+                        },
                         fillColor: HexColor('#C33589'),
                         child: Icon(
                           Icons.local_grocery_store,
