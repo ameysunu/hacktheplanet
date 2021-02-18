@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hacktheplanet/donate.dart';
 import 'shop.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -17,6 +18,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   final List<Widget> _widgetOptions = [
     Home(),
     Shop(),
+    Donate(),
   ];
 
   Widget build(BuildContext context) {
