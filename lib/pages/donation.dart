@@ -131,8 +131,27 @@ class _DonationState extends State<Donation> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+            child: TextFormField(
+              //controller: nameController,
+              style: TextStyle(color: Colors.pink, fontFamily: 'Gotham'),
+              decoration: new InputDecoration(
+                enabledBorder: new OutlineInputBorder(
+                    borderSide: new BorderSide(color: Colors.black54)),
+                hintStyle: TextStyle(
+                  fontFamily: 'Gotham',
+                  color: Colors.black54,
+                  fontSize: 15,
+                  fontStyle: FontStyle.italic,
+                ),
+                labelStyle: TextStyle(fontFamily: 'Gotham', color: Colors.pink),
+                hintText: 'Price(USD)',
+              ),
+            ),
+          ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.05,
+            height: MediaQuery.of(context).size.height * 0.02,
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),

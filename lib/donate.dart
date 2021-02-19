@@ -81,7 +81,7 @@ class _DonateState extends State<Donate> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => Donation(
-                                        title: "Grocery",
+                                        title: "Accessory",
                                       )));
                         },
                         fillColor: HexColor('#C33589'),
@@ -96,7 +96,7 @@ class _DonateState extends State<Donate> {
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: Text(
-                          "Grocery",
+                          "Accessory",
                           style: TextStyle(
                             fontFamily: 'Gotham',
                             color: HexColor('#FFE3EA'),
