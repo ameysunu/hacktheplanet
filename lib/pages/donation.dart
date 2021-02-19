@@ -1,10 +1,19 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:permission_handler/permission_handler.dart';
+
+final place = TextEditingController();
+final item = TextEditingController();
+final description = TextEditingController();
+final price = TextEditingController();
+
+DateTime now = DateTime.now();
+final firestoreInstance = FirebaseFirestore.instance;
 
 class Donation extends StatefulWidget {
   final String title;
@@ -77,7 +86,7 @@ class _DonationState extends State<Donation> {
           Padding(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextFormField(
-              //controller: nameController,
+              controller: place,
               style: TextStyle(color: Colors.pink, fontFamily: 'Gotham'),
               decoration: new InputDecoration(
                 enabledBorder: new OutlineInputBorder(
@@ -96,7 +105,7 @@ class _DonationState extends State<Donation> {
           Padding(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextFormField(
-              //controller: nameController,
+              controller: item,
               style: TextStyle(color: Colors.pink, fontFamily: 'Gotham'),
               decoration: new InputDecoration(
                 enabledBorder: new OutlineInputBorder(
@@ -115,7 +124,7 @@ class _DonationState extends State<Donation> {
           Padding(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextFormField(
-              //controller: nameController,
+              controller: description,
               style: TextStyle(color: Colors.pink, fontFamily: 'Gotham'),
               decoration: new InputDecoration(
                 enabledBorder: new OutlineInputBorder(
@@ -127,14 +136,14 @@ class _DonationState extends State<Donation> {
                   fontStyle: FontStyle.italic,
                 ),
                 labelStyle: TextStyle(fontFamily: 'Gotham', color: Colors.pink),
-                hintText: 'Type of Item',
+                hintText: 'Description',
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextFormField(
-              //controller: nameController,
+              controller: price,
               style: TextStyle(color: Colors.pink, fontFamily: 'Gotham'),
               decoration: new InputDecoration(
                 enabledBorder: new OutlineInputBorder(
@@ -193,7 +202,33 @@ class _DonationState extends State<Donation> {
                       borderRadius: BorderRadius.circular(10.0),
                       side: BorderSide(color: HexColor('#EC1C64'))),
                   onPressed: () async {
-                    print(_imageUrl);
+                    if (widget.title == "Food") {
+                      firestoreInstance
+                          .collection('grocery')
+                          .doc('${now.day}${now.month}${now.year}')
+                          .set({
+                        "description": description.text,
+                        "image": _imageUrl.toString(),
+                        "name": item.text,
+                        "price": price.text,
+                      }).then((_) {
+                        print("success!");
+                      });
+                    } else if (widget.title == "Accessory") {
+                      firestoreInstance
+                          .collection('accessory')
+                          .doc('${now.day}${now.month}${now.year}')
+                          .set({
+                        "description": description.text,
+                        "image": _imageUrl.toString(),
+                        "name": item.text,
+                        "price": price.text,
+                      }).then((_) {
+                        print("success!");
+                      });
+                    }
+                    clear();
+                    Navigator.pop(context);
                   },
                   color: HexColor('#EC1C64'),
                   textColor: HexColor('#FFE3EA'),
@@ -216,4 +251,11 @@ class _DonationState extends State<Donation> {
       ),
     );
   }
+}
+
+void clear() {
+  place.clear();
+  item.clear();
+  description.clear();
+  price.clear();
 }
