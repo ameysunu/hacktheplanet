@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:path/path.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class Donation extends StatefulWidget {
@@ -33,10 +32,8 @@ class _DonationState extends State<Donation> {
 
       if (image != null) {
         //Upload to Firebase
-        var snapshot = await _firebaseStorage
-            .ref()
-            .child('images/imageName')
-            .putFile(file);
+        var snapshot =
+            await _firebaseStorage.ref().child('images/').putFile(file);
         var downloadUrl = await snapshot.ref.getDownloadURL();
         setState(() {
           _imageUrl = downloadUrl;
@@ -72,6 +69,7 @@ class _DonationState extends State<Donation> {
         ],
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: MediaQuery.of(context).size.height * 0.05,
@@ -133,14 +131,36 @@ class _DonationState extends State<Donation> {
               ),
             ),
           ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.05,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text("Add an image".toUpperCase(),
+                style: TextStyle(
+                    fontFamily: 'Gotham', color: Colors.pink, fontSize: 20)),
+          ),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.2,
+              height: MediaQuery.of(context).size.height * 0.15,
               child: (_imageUrl != null)
                   ? Image.network(_imageUrl)
                   : Image.network('https://i.imgur.com/sUFH1Aq.png'),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: RaisedButton(
+                onPressed: () {
+                  uploadImage();
+                },
+                child: Text(
+                  "Upload".toUpperCase(),
+                  style: TextStyle(
+                    fontFamily: 'Gotham',
+                  ),
+                )),
           ),
           Spacer(),
           Padding(
@@ -154,7 +174,7 @@ class _DonationState extends State<Donation> {
                       borderRadius: BorderRadius.circular(10.0),
                       side: BorderSide(color: HexColor('#EC1C64'))),
                   onPressed: () async {
-                    uploadImage();
+                    print(_imageUrl);
                   },
                   color: HexColor('#EC1C64'),
                   textColor: HexColor('#FFE3EA'),
