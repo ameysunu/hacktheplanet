@@ -1,6 +1,5 @@
-# hacktheplanet
-
-A new Flutter project.
+# Extricate
+A Flutter app to help wastage of food.
 
 ## Getting Started
 
