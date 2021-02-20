@@ -79,7 +79,7 @@ class _UserState extends State<User> {
                                   style: TextStyle(
                                       fontFamily: 'Gotham',
                                       color: HexColor('#FFE3EA'),
-                                      fontSize: 17),
+                                      fontSize: 15),
                                 ),
                               ),
                             ],
@@ -128,34 +128,44 @@ class _UserState extends State<User> {
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.pink,
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Icon(
-                            CupertinoIcons.info_circle_fill,
-                            color: HexColor('#FFE3EA'),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => NewInfo(
+                                title: 'What is Extricate?',
+                              )));
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Icon(
+                              CupertinoIcons.info_circle_fill,
+                              color: HexColor('#FFE3EA'),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            "What is this exactly?",
-                            style: TextStyle(
-                                fontFamily: 'Gotham',
-                                color: HexColor('#FFE3EA'),
-                                fontSize: 20),
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              "What is this exactly?",
+                              style: TextStyle(
+                                  fontFamily: 'Gotham',
+                                  color: HexColor('#FFE3EA'),
+                                  fontSize: 20),
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  )),
+                        ],
+                      ),
+                    )),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
@@ -201,6 +211,45 @@ class _UserState extends State<User> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class NewInfo extends StatefulWidget {
+  final String title;
+  NewInfo({this.title});
+  @override
+  _NewInfoState createState() => _NewInfoState();
+}
+
+class _NewInfoState extends State<NewInfo> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.pink,
+        elevation: 0,
+        title: Text(
+          widget.title.toUpperCase(),
+          style: TextStyle(fontFamily: 'Gotham', color: HexColor('#FFE3EA')),
+        ),
+      ),
+      backgroundColor: Colors.pink,
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              "We are glad, you asked. Extricate is an app that helps people save money and also help in decrease of climate change. How you may ask? Pretty simple. Let's begin with food wastage. With Extricate, you can save the excess food cooked up at restaurants by buying them for a cheaper price or giving them away to the needy.\n\nPS: These are'nt leftovers. They are just food that was cooked in excess. Users can also purchase accessories at a cheaper rate. These are accessories which are about to expire. We do not encourage selling off expired items and hence all the items are atleast a month due expiry.\n\n You can also sell off/give away items and excess food as well. With Extricate, let's make our planet a better place.!",
+              style: TextStyle(
+                  fontFamily: 'Gotham',
+                  color: HexColor('#FFE3EA'),
+                  fontSize: 16,
+                  height: 1.5),
+            ),
+          )
+        ],
       ),
     );
   }
