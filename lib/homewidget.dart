@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hacktheplanet/donate.dart';
+import 'package:hacktheplanet/user.dart';
 import 'shop.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -15,11 +16,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   int _selectedIndex = 0;
 
-  final List<Widget> _widgetOptions = [
-    Home(),
-    Shop(),
-    Donate(),
-  ];
+  final List<Widget> _widgetOptions = [Home(), Shop(), Donate(), User()];
 
   Widget build(BuildContext context) {
     return Scaffold(
