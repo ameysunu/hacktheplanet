@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'login.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class User extends StatefulWidget {
   @override
@@ -14,6 +16,7 @@ class _UserState extends State<User> {
       backgroundColor: HexColor('#FFE3EA'),
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: MediaQuery.of(context).size.height * 0.3,
@@ -36,7 +39,7 @@ class _UserState extends State<User> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10.0),
               child: Container(
                 width: MediaQuery.of(context).size.width * 1,
                 decoration: BoxDecoration(
@@ -121,6 +124,79 @@ class _UserState extends State<User> {
                     ),
                   ],
                 ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.pink,
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Icon(
+                            CupertinoIcons.info_circle_fill,
+                            color: HexColor('#FFE3EA'),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            "What is this exactly?",
+                            style: TextStyle(
+                                fontFamily: 'Gotham',
+                                color: HexColor('#FFE3EA'),
+                                fontSize: 20),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: InkWell(
+                onTap: () async {
+                  const url =
+                      'https://github.com/ameysunu/hacktheplanet/issues';
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Icon(
+                              Icons.warning,
+                              color: HexColor('#FFE3EA'),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              "Report issues here",
+                              style: TextStyle(
+                                  fontFamily: 'Gotham',
+                                  color: HexColor('#FFE3EA'),
+                                  fontSize: 20),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
               ),
             ),
           ],
