@@ -35,56 +35,92 @@ class _UserState extends State<User> {
                 ),
               ),
             ),
-            Container(
-              width: MediaQuery.of(context).size.width * 1,
-              decoration: BoxDecoration(
-                  color: Colors.pink,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15))),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: CircleAvatar(
-                            radius: 50,
-                            backgroundColor: Colors.pink,
-                            child: Image.network(imageUrl),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width * 1,
+                decoration: BoxDecoration(
+                    color: Colors.pink,
+                    borderRadius: BorderRadius.all(Radius.circular(15))),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: CircleAvatar(
+                              radius: 50,
+                              backgroundColor: Colors.pink,
+                              child: Image.network(imageUrl),
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  name,
+                                  style: TextStyle(
+                                      fontFamily: 'Gotham',
+                                      color: HexColor('#FFE3EA'),
+                                      fontSize: 20),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  email,
+                                  style: TextStyle(
+                                      fontFamily: 'Gotham',
+                                      color: HexColor('#FFE3EA'),
+                                      fontSize: 17),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.05,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: ButtonTheme(
+                        height: 50,
+                        child: RaisedButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                              side: BorderSide(color: HexColor('#FFE3EA'))),
+                          onPressed: () {
+                            signOutGoogle();
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Login()));
+                          },
+                          color: Colors.white,
+                          textColor: Colors.pink,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Center(
+                                child: Text("Logout".toUpperCase(),
+                                    style: TextStyle(fontFamily: 'Gotham')),
+                              ),
+                            ],
                           ),
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                name,
-                                style: TextStyle(
-                                    fontFamily: 'Gotham',
-                                    color: HexColor('#FFE3EA'),
-                                    fontSize: 20),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                email,
-                                style: TextStyle(
-                                    fontFamily: 'Gotham',
-                                    color: HexColor('#FFE3EA'),
-                                    fontSize: 17),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                      ),
                     ),
-                  )
-                ],
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.02,
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
